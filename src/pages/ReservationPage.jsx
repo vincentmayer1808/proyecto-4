@@ -6,7 +6,7 @@ export const ReservationPage = () => {
   return (
     <>
     <ReservationForm/>
-    <Contact/>
+    {/* <Contact/> */}
     </>
   )
 }
