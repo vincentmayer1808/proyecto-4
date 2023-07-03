@@ -19,11 +19,14 @@ export const MainRouter = ({ user }) => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/MenuPage" element={<MenuPage />} />
-        <Route
+        <Route path="/ReservationPage" element={<ReservationPage />} />
+
+
+        {/* <Route
           element={<ProtectedRoutes isAllowed={isAllowed} />}
         >
           <Route path="/ReservationPage" element={<ReservationPage />} />
-        </Route>
+        </Route> */}
       </Routes>
     </div>
   );

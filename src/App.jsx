@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { NavBar } from "./components/NavBar";
+import { NavBar } from "./components/navbar/NavBar";
 import { MainRouter } from "./routes/MainRouter";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "./firebase/firebase";
 import "./App.css";
+import { Contact } from "./components/contact/Contact";
+
 
 
 function App() {
@@ -33,9 +35,10 @@ function App() {
   return (
     <>
       <NavBar user={user} onLogout={onLogout} onLogin={onLogin}/>
-      <div className="container">
+      <div className="background">
       <MainRouter user={user}/>
       </div>
+      <Contact/>
     </>
   );
 }

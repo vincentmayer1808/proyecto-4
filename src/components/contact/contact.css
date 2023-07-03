@@ -1,0 +1,10 @@
+div.contact{
+    display: flex;
+}
+div.contact:first-child{
+    width: 35vw;
+}
+div.contact:last-child{
+    width: 65vw;
+    background-color: aquamarine;
+}
