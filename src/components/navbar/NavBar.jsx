@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export const NavBar = ({ user, onLogin, onLogout }) => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark px-3">
       <div className="navbar-collapse">
         <div className="navbar-nav">
           <NavLink className="nav-item nav-link" to="/">
@@ -21,7 +21,7 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
         </div>
 
         {user ? (
-          <div className="navbar-collapse ml-auto">
+          <div className="navbar-collapse d-flex justify-content-end ml-auto">
             <div className="navbar-nav ml-auto">
               <div className="d-flex align-items-center">
                 <img

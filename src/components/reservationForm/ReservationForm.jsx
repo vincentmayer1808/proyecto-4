@@ -84,7 +84,7 @@ export const ReservationForm = () => {
     <>
       <div className="container-fluid bg-dark">
         <img
-          src="../../../public/assets/reserved.jpg"
+          src="assets/reserved.jpg"
           className="img-fluid mb-2"
           alt="reservationPic"
         />

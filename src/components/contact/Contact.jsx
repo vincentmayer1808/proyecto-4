@@ -3,11 +3,11 @@ import "./contact.css"
 
 export const Contact = () => {
   return (
-    <div className="contact">
+    <div className=" d-flex vw-100">
       <div>
-        <img src="../../assets/contactpic.jpg" alt="brindis" width="50vw"/>
+        <img src="/assets/contactpic.jpg" alt="brindis" className="img-fluid "/>
       </div>
-      <div>
+      <div className="bg-dark text-light text-center p-3 container-fluid">
         <h2>Contact us</h2>
         <p>
           Our Direction : <span>123, 1st street, Reactcity</span>

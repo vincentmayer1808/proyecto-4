@@ -1,9 +1,11 @@
 import React from "react";
+import "./menu.css"
 
 export const Menu = () => {
   return (
-    <>
-      <div>
+    <div className="container-fluid bg-dark pb-2">
+      <div className="container-fluid text-light text-center bg-dark">
+        <img src="/assets/menu.jpg" className="w-100 mb-2" alt="Menu Picture" />
         <h2>Menu</h2>
         <p>Consulta nuestro menu y elije lo que mas guste</p>
       </div>
@@ -85,15 +87,17 @@ export const Menu = () => {
               <span>$10</span>
             </li>
             <li className="food">
-              <span>React Xpress Burger</span>
+              <span>React Burger</span>
               <span>$10</span>
             </li>
             <li className="food">
               <span> Fried Chicken</span>
               <span>$10</span>
             </li>
-            <li></li>
-            <li></li>
+            <li className="food">
+              <span>React Pizza</span>
+              <span>$15</span>
+            </li>
           </ul>
         </div>
         <div>
@@ -118,6 +122,6 @@ export const Menu = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
