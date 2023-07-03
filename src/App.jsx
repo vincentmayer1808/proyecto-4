@@ -35,9 +35,9 @@ function App() {
   return (
     <>
       <NavBar user={user} onLogout={onLogout} onLogin={onLogin}/>
-      <div className="background">
+    
       <MainRouter user={user}/>
-      </div>
+      
       <Contact/>
     </>
   );

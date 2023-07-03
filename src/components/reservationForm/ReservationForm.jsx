@@ -33,9 +33,7 @@ export const ReservationForm = () => {
       persons == "" ||
       date == ""
     ) {
-      return (
-    window.alert("Input fields cannot be empty")
-      );
+      return window.alert("Input fields cannot be empty");
     } else {
       handleAdd(formState);
       setFormState(initForm);
@@ -72,7 +70,6 @@ export const ReservationForm = () => {
 
   useEffect(() => {
     getReservations();
-    // console.log(reservations);
   }, []);
 
   useEffect(() => {
@@ -84,69 +81,114 @@ export const ReservationForm = () => {
   }, [currentId]);
 
   return (
-    <div>
-      <form action="submit">
-        <div>
-          <label htmlFor="">Your Name</label>
-          <input
-            name="username"
-            type="text"
-            placeholder="Enter your name here"
-            value={formState.username}
-            onChange={onChangeForm}
-          />
+    <>
+      <div className="container-fluid bg-dark">
+        <img
+          src="../../../public/assets/reserved.jpg"
+          className="img-fluid mb-2"
+          alt="reservationPic"
+        />
+        <div className="container-fluid bg-light text-dark shadow-lg rounded p-3">
+          <div className="text-center">
+            <h2>Make your reservation</h2>
+            <p>
+              Please, give us your information so we can reserve the best place
+              for you
+            </p>
+          </div>
+          <form action="submit">
+            <div className="form-group g-3 ">
+              <label className="col-form-label mx-2" htmlFor="username">
+                Name
+              </label>
+              <input
+                className="form-control col-auto shadow"
+                name="username"
+                type="text"
+                placeholder="Enter your name here"
+                value={formState.username}
+                onChange={onChangeForm}
+              />
+            </div>
+            <div className="form-group g-3 ">
+              <label className="col-form-label mx-2" htmlFor="email">
+                Email adress
+              </label>
+              <input
+                className="form-control shadow"
+                name="email"
+                placeholder="Enter your email adress here"
+                type="email"
+                value={formState.email}
+                onChange={onChangeForm}
+              />
+            </div>
+            <div className="form-group g-3 ">
+              <label className="col-form-label mx-2" htmlFor="phone">
+                Phone number
+              </label>
+              <input
+                className="form-control shadow"
+                name="phone"
+                placeholder="Enter your phone number here"
+                type="number"
+                value={formState.phone}
+                onChange={onChangeForm}
+              />
+            </div>
+            <div className="form-group g-3">
+              <label className="col-form-label mx-2" htmlFor="persons">
+                How much persons?
+              </label>
+              <input
+                className="form-control shadow"
+                name="persons"
+                placeholder="Enter the number of persons"
+                type="number"
+                value={formState.persons}
+                onChange={onChangeForm}
+              />
+            </div>
+            <div className="form-group g-3">
+              <label className="col-form-label mx-2" htmlFor="date">
+                Date and Time
+              </label>
+              <input
+                className="form-control shadow"
+                name="date"
+                placeholder="select the date and time of your reservation"
+                type="datetime-local"
+                value={formState.date}
+                onChange={onChangeForm}
+                min={moment().add("15", "minutes").format("YYYY-MM-DD hh:mm")}
+                max={moment().add("1", "year").format("YYYY-MM-DD hh:mm")}
+              />
+            </div>
+            <button
+              className="btn btn-primary d-grid col-6 mx-auto mt-2 shadow"
+              type="submit"
+              id="submit"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </form>
         </div>
-        <div>
-          <label htmlFor="email">Enter your email contact</label>
-          <input
-            name="email"
-            type="email"
-            value={formState.email}
-            onChange={onChangeForm}
-          />
+        <div className="container-fluid">
+          {reservations == "" ? (
+            <p className="text-center text-light">
+              There is no reservations yet
+            </p>
+          ) : (
+            <div className="container-fluid">
+              <ResTable
+                reservations={reservations}
+                setCurrentId={setCurrentId}
+              />
+            </div>
+          )}
         </div>
-        <div>
-          <label htmlFor="phone">Enter your phone number here</label>
-          <input
-            name="phone"
-            type="number"
-            value={formState.phone}
-            onChange={onChangeForm}
-          />
-        </div>
-        <div>
-          <label htmlFor="persons">How much persons</label>
-          <input
-            name="persons"
-            type="number"
-            value={formState.persons}
-            onChange={onChangeForm}
-          />
-        </div>
-        <div>
-          <label htmlFor="date">
-            Enter the date and time that you want to reserve
-          </label>
-          <input
-            name="date"
-            type="datetime-local"
-            value={formState.date}
-            onChange={onChangeForm}
-            min={moment().add("15", "minutes").format("YYYY-MM-DD hh:mm")}
-            max={moment().add("1", "year").format("YYYY-MM-DD hh:mm")}
-          />
-        </div>
-        <button type="submit" id="submit" onClick={handleSubmit}>
-          Submit
-        </button>
-      </form>
-      {reservations == "" ? (
-        <p>There is no reservations yet</p>
-      ) : (
-        <div>
-          <ResTable reservations={reservations} setCurrentId={setCurrentId} />
-        </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };

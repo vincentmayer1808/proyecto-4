@@ -15,7 +15,7 @@ export const MainRouter = ({ user }) => {
     }
   })
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/MenuPage" element={<MenuPage />} />
@@ -28,6 +28,6 @@ export const MainRouter = ({ user }) => {
           <Route path="/ReservationPage" element={<ReservationPage />} />
         </Route> */}
       </Routes>
-    </div>
+    </>
   );
 };
