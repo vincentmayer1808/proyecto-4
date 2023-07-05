@@ -1,0 +1,5 @@
+En este cuarto proyecto del Bootcamp de Desarrollo Web Full Stack de la Universidad del desarrollo se puede observar una applicación web hecha con React.js donde se simula la pagina de un restaurant. 
+
+Esta applicación web cuenta con una pagina de presentación, una pagina de menu y una pagina de reservación. En cada cual de estas paginas se puede observar una barra de navegación arriba, y la información de contacto a bajo, aunque el restaurant sea ficticio, los links de las redes sociales les lleva de igual modo a la pagina oficial del icono selecionado. 
+
+Para hacer una reservación, el usuario debe registrarse por medio de su cuenta google, sino no podra acceder a la pagina de reservation porque es una ruta protegida. Esta medida es para confirmar la validez del usuario antes la reservación tanto como para traer solo las reservaciónes hecha por este usuario.

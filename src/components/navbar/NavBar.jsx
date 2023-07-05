@@ -6,7 +6,7 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
       <div className="navbar-collapse">
         <div className="navbar-nav">
           <NavLink className="nav-item nav-link" to="/">
-            Home
+            About Us
           </NavLink>
         </div>
         <div className="navbar-nav">
@@ -37,7 +37,7 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
             </div>
           </div>
         ) : (
-          <div className="navbar-collapse ml-auto">
+          <div className="navbar-collapse d-flex justify-content-end ml-auto">
             <div className="navbar-nav ml-auto">
               <button
                 className="nav-item nav-link btn btn-primary"

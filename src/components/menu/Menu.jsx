@@ -7,7 +7,7 @@ export const Menu = () => {
       <div className="container-fluid text-light text-center bg-dark">
         <img src="/assets/menu.jpg" className="w-100 mb-2" alt="Menu Picture" />
         <h2>Menu</h2>
-        <p>Consulta nuestro menu y elije lo que mas guste</p>
+        <p>Get a look at our menu and pick what you prefer!</p>
       </div>
       <div className="menu">
         <div>
@@ -66,7 +66,7 @@ export const Menu = () => {
               <span>$8</span>
             </li>
             <li className="food">
-              <span> Muchroom Cream</span>
+              <span> Mushroom Cream</span>
               <span>$8</span>
             </li>
             <li className="food">
