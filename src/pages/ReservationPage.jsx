@@ -2,10 +2,11 @@ import React from 'react'
 import { ReservationForm } from '../components/reservationForm/ReservationForm'
 
 
-export const ReservationPage = () => {
+export const ReservationPage = ({uid}) => {
+
   return (
     <>
-    <ReservationForm/>
+    <ReservationForm uid={uid}/>
     </>
   )
 }

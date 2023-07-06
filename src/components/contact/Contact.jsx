@@ -5,7 +5,7 @@ import "./contact.css";
 export const Contact = () => {
   return (
     <>
-      <div className=" d-flex align-items-center bg-dark text-light text-center vw-100 breakpoint">
+      <div id="contact" className="container-fluid d-flex align-items-center bg-dark text-light text-center breakpoint">
         <div>
           <img
             src="/assets/contactpic.jpg"
@@ -24,7 +24,7 @@ export const Contact = () => {
           <p>
             Our Email : <span>restaurantreactxpress@gmail.com</span>
           </p>
-          <div className="icon d-flex justify-content-evenly">
+          <div className="icon d-flex justify-content-evenly mb-3">
             <a href="https://facebook.com">
               <i className="bi bi-facebook" />
             </a>

@@ -7,13 +7,17 @@ import { ProtectedRoutes } from "./ProtectedRoutes";
 
 export const MainRouter = ({ user }) => {
   const [isAllowed, setIsAllowed] = useState(false);
+  const [uid, setUid] = useState("");
   useEffect(() => {
     if (user?.role === "ADMIN_ROLE") {
       setIsAllowed(true);
+      setUid(user.id);
+     
     } else {
       setIsAllowed(false);
     }
   });
+
   return (
     <>
       <Routes>
@@ -21,7 +25,10 @@ export const MainRouter = ({ user }) => {
         <Route path="/MenuPage" element={<MenuPage />} />
 
         <Route element={<ProtectedRoutes isAllowed={isAllowed} />}>
-          <Route path="/ReservationPage" element={<ReservationPage />} />
+          <Route
+            path="/ReservationPage"
+            element={<ReservationPage uid={uid} />}
+          />
         </Route>
       </Routes>
     </>

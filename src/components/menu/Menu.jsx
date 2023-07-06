@@ -3,8 +3,8 @@ import "./menu.css"
 
 export const Menu = () => {
   return (
-    <div className="container-fluid bg-dark pb-2">
-      <div className="container-fluid text-light text-center bg-dark">
+    <div className="bg-light">
+      <div className="container-fluid text-light text-center bg-dark pb-3">
         <img src="/assets/menu.jpg" className="w-100 mb-2" alt="Menu Picture" />
         <h2>Menu</h2>
         <p>Get a look at our menu and pick what you prefer!</p>

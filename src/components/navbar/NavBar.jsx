@@ -19,6 +19,11 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
             Reservation
           </NavLink>
         </div>
+        <div className="navbar-nav">
+          <a className="nav-item nav-link" href="#contact">
+            Contact
+          </a>
+        </div>
 
         {user ? (
           <div className="navbar-collapse d-flex justify-content-end ml-auto">
@@ -32,7 +37,7 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
                 <span className="nav-item nav-link text-info">{user.name}</span>
               </div>
               <button className="nav-item nav-link btn" onClick={onLogout}>
-                Cerrar sesión
+                Sign Out
               </button>
             </div>
           </div>
@@ -43,7 +48,7 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
                 className="nav-item nav-link btn btn-primary"
                 onClick={onLogin}
               >
-                Iniciar sesión
+               Sign In
               </button>
             </div>
           </div>
