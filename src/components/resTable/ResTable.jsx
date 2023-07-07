@@ -3,10 +3,17 @@ import { db } from "../../firebase/firebase";
 
 export const ResTable = ({ reservations, setCurrentId }) => {
   const handleDelete = async (id) => {
-    if (!window.confirm("¿Estás seguro de eliminar esta reservation?")) {
+    if (!window.confirm("Are you sure you want to delete this reservation?")) {
       return;
     }
-    await db.collection("reservations").doc(id).delete();
+    try {
+      await db.collection("reservations").doc(id).delete();
+    } catch (error) {
+      console.log(error);
+      return window.alert(
+        "There has been an error deleting, please try again later"
+      );
+    }
   };
 
   return (
@@ -29,7 +36,7 @@ export const ResTable = ({ reservations, setCurrentId }) => {
               <td>{el.email}</td>
               <td>{el.phone}</td>
               <td>{el.persons}</td>
-              <td>{el.date.split('T').join(' ')}</td>
+              <td>{el.date.split("T").join(" ")}</td>
               <td>
                 <button
                   className="btn btn-warning mx-2"

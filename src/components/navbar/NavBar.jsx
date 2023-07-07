@@ -48,7 +48,7 @@ export const NavBar = ({ user, onLogin, onLogout }) => {
                 className="nav-item nav-link btn btn-primary"
                 onClick={onLogin}
               >
-               Sign In
+                Sign In
               </button>
             </div>
           </div>

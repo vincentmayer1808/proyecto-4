@@ -12,7 +12,6 @@ export const MainRouter = ({ user }) => {
     if (user?.role === "ADMIN_ROLE") {
       setIsAllowed(true);
       setUid(user.id);
-     
     } else {
       setIsAllowed(false);
     }

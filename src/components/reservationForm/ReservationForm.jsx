@@ -34,7 +34,7 @@ export const ReservationForm = ({ uid }) => {
       persons == "" ||
       date == ""
     ) {
-      return window.alert("Input fields cannot be empty");
+      return window.alert("Please, fill all the inputs");
     } else {
       handleAdd(formState);
       setFormState(initForm);
@@ -51,6 +51,9 @@ export const ReservationForm = ({ uid }) => {
       }
     } catch (error) {
       console.log(error);
+      return window.alert(
+        "There has been an error connecting to the database, please try again later"
+      );
     }
   };
 
@@ -65,8 +68,15 @@ export const ReservationForm = ({ uid }) => {
   };
 
   const getReservationId = async (id) => {
-    const doc = await db.collection("reservations").doc(id).get();
-    setFormState({ ...doc.data() });
+    try {
+      const doc = await db.collection("reservations").doc(id).get();
+      setFormState({ ...doc.data() });
+    } catch (error) {
+      console.log(error);
+      return window.alert(
+        "There has been an error connecting to the database, please try again later"
+      );
+    }
   };
 
   useEffect(() => {
