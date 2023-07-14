@@ -172,7 +172,7 @@ export const ReservationForm = ({ uid }) => {
                   type="datetime-local"
                   value={formState.date}
                   onChange={onChangeForm}
-                  min={moment().add("15", "minutes").format("YYYY-MM-DD hh:mm")}
+                  min={moment().format("YYYY-MM-DD hh:mm")}
                   max={moment().add("1", "year").format("YYYY-MM-DD hh:mm")}
                 />
               </div>
